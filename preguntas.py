@@ -179,7 +179,7 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    lista=tbl0.groupby("_c1")["_c2"].apply(lambda x:':'.join(sorted(map(str,x)))).reset_index()
+    lista=tbl0.groupby("_c1")["_c2"].apply(lambda x:':'.join(sorted(map(str,x)))).reset_index("_c1").rename_axis("_c1")
     return lista
 
 print(pregunta_10())
